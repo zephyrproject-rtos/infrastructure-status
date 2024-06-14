@@ -45,6 +45,10 @@ const dark: DefaultTheme = {
         text: "rgb(231, 168, 161)",
         background: "rgba(217, 68, 48, 0.1)",
       },
+      inactive: {
+        text: "rgb(163, 156, 144)",
+        background: "rgba(177, 177, 177, 0.1)",
+      },
       unknown: {
         text: "rgb(163, 156, 144)",
         background: "rgba(177, 177, 177, 0.1)",
@@ -107,6 +111,10 @@ const light: DefaultTheme = {
       majorOutage: {
         text: "#8e3b31",
         background: "rgba(217, 68, 48, 0.1)",
+      },
+      inactive: {
+        text: "#6e6b6b",
+        background: "rgba(177, 177, 177, 0.1)",
       },
       unknown: {
         text: "#6e6b6b",

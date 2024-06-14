@@ -24,6 +24,7 @@ declare module "styled-components" {
         degradedPerformance: Badge;
         partialOutage: Badge;
         majorOutage: Badge;
+        inactive: Badge;
         unknown: Badge;
       };
       incidentStatus: {

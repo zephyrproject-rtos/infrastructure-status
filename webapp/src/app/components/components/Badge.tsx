@@ -31,6 +31,11 @@ const MajorOutageBadge = styled(BaseBadge)`
   background-color: ${(props) => props.theme.colors.badgeStatus.majorOutage.background};
 `;
 
+const InactiveBadge = styled(BaseBadge)`
+  color: ${(props) => props.theme.colors.badgeStatus.inactive.text};
+  background-color: ${(props) => props.theme.colors.badgeStatus.inactive.background};
+`;
+
 const UnknownBadge = styled(BaseBadge)`
   color: ${(props) => props.theme.colors.badgeStatus.unknown.text};
   background-color: ${(props) => props.theme.colors.badgeStatus.unknown.background};
@@ -45,6 +50,7 @@ export const Badge = ({ status, updatedAt }:
     ),
     partialOutage: <PartialOutageBadge>Partial Outage</PartialOutageBadge>,
     majorOutage: <MajorOutageBadge>Major Outage</MajorOutageBadge>,
+    inactive: <InactiveBadge>Inactive</InactiveBadge>,
     unknown: <UnknownBadge>Unknown</UnknownBadge>,
   };
 

@@ -16,6 +16,7 @@ export type ComponentType = {
     | "degradedPerformance"
     | "partialOutage"
     | "majorOutage"
+    | "inactive"
     | "unknown";
   rawData: string;
   updatedAt: string;
