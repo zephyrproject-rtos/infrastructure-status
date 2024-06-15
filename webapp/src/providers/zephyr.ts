@@ -1,6 +1,6 @@
 import { ComponentType, IncidentType, Provider } from "@/api/types";
 
-const sourceBase = "https://gist.githubusercontent.com/stephanosio/b0d0a65518311e68dc2b3b0bbfb1a1c8/raw";
+const sourceBase = "https://gist.githubusercontent.com/zephyrbot/08a5b71b4208c6bd48d7f6447c10c786/raw";
 
 const components = [
   {
