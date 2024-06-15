@@ -29,6 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.png" sizes="32x32" />
+        <title>Zephyr Project Infrastructure Status</title>
       </head>
       <StyledComponentsRegistry>
         <ThemeProvider>
