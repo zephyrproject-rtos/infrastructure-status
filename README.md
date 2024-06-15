@@ -5,8 +5,8 @@ app](https://status.zephyrproject.io).
 
 ## Web App
 
-The web app is compiled and published by the `publish` GitHub Actions workflow
-and hosted by the GitHub Pages.
+The web app is compiled and published by the `deploy-webapp` GitHub Actions
+workflow and hosted by the GitHub Pages.
 
 ## Incident Reports
 
