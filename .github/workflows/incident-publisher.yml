@@ -1,0 +1,55 @@
+# Publish incident issues to Gist
+name: Incident Publisher
+
+on:
+  workflow_dispatch:
+    branches:
+    - main
+  schedule:
+  # Run every 5 minutes
+  - cron: '*/5 * * * *'
+
+concurrency:
+  group: "incident-publisher"
+  cancel-in-progress: false
+
+defaults:
+  run:
+    working-directory: incident-publisher
+
+env:
+  INCIDENT_GIST_ID: 94b5b2e21495651fd58a175cba548b3c
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: Build incident-publisher
+      run: |
+        npm run build
+
+    - name: Install incident-publisher
+      run: |
+        npm install -g .
+
+    - name: Run incident-publisher
+      run: |
+        incident-publisher \
+          -o zephyrproject-rtos \
+          -r infrastructure-status \
+          -t ${{ secrets.ZB_GITHUB_TOKEN }} \
+          -g ${{ env.INCIDENT_GIST_ID }}
