@@ -10,8 +10,8 @@ workflow and hosted by the GitHub Pages.
 
 ## Incident Reports
 
-The issues labeled with the `incident` label are used to track the incidents
-displayed on the status web app.
+The issues labeled with the `incident` and `incident-activate` labels are used to track the
+incidents displayed on the status web app.
 
 ## Acknowledgement
 
