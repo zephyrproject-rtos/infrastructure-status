@@ -7,6 +7,11 @@ const incidentSourceBase =
 
 const components = [
   {
+    id: "9",
+    name: "HZR Kubernetes Cluster",
+    source: `${componentSourceBase}/status.hzr_kubernetes_cluster.json`,
+  },
+  {
     id: "10",
     name: "CNX Kubernetes Cluster",
     source: `${componentSourceBase}/status.cnx_kubernetes_cluster.json`,
@@ -17,9 +22,19 @@ const components = [
     source: `${componentSourceBase}/status.aws_kubernetes_cluster.json`,
   },
   {
+    id: "49",
+    name: "HZR KeyDB Cache",
+    source: `${componentSourceBase}/status.hzr_keydb_cache.json`,
+  },
+  {
     id: "50",
     name: "CNX KeyDB Cache",
     source: `${componentSourceBase}/status.cnx_keydb_cache.json`,
+  },
+  {
+    id: "99",
+    name: "HZR Actions Runner Controller",
+    source: `${componentSourceBase}/status.hzr_actions_runner_controller.json`,
   },
   {
     id: "100",
@@ -30,6 +45,16 @@ const components = [
     id: "101",
     name: "AWS Actions Runner Controller",
     source: `${componentSourceBase}/status.aws_actions_runner_controller.json`,
+  },
+  {
+    id: "105",
+    name: "HZR Runner Scale Set: linux-arm64-4xlarge",
+    source: `${componentSourceBase}/status.hzr_runner_scale_set-linux_arm64_4xlarge.json`,
+  },
+  {
+    id: "106",
+    name: "HZR Runner Scale Set: linux-x64-4xlarge",
+    source: `${componentSourceBase}/status.hzr_runner_scale_set-linux_x64_4xlarge.json`,
   },
   {
     id: "110",
