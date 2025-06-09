@@ -11,6 +11,9 @@ export type SummaryType = {
 export type ComponentType = {
   id: string;
   name: string;
+  type:
+    | "runner"
+    | "service";
   status:
     | "operational"
     | "degradedPerformance"
@@ -21,6 +24,13 @@ export type ComponentType = {
   rawData: string;
   updatedAt: string;
 };
+
+export type RunnerComponentType = ComponentType & {
+  pendingRunnerCount: number;
+  runningRunnerCount: number;
+};
+
+export type ServiceComponentType = ComponentType;
 
 export type IncidentType = {
   id: string;
