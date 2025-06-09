@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import fs from "node:fs";
 import { Command, Option } from "commander";
 import { Octokit } from "@octokit/rest";
 
@@ -10,7 +11,6 @@ program
   .description("GitHub issues-backed status page incident publisher")
   .option("-o, --owner <owner>", "Repository owner", "zephyrproject-rtos")
   .option("-r, --repository <repository>", "Repository name", "infrastructure-status")
-  .requiredOption("-g, --gist-id <gist ID>", "Incident Gist ID")
   .addOption(new Option("-t, --token <GitHub token>", "GitHub token")
               .makeOptionMandatory().env("GITHUB_TOKEN"))
   .parse(process.argv)
@@ -57,17 +57,14 @@ const getIncidents = async (state: "open" | "closed") => {
   const pastIncidents = (await getIncidents("closed")).slice(0, 5);
   console.log(`Retrieved ${pastIncidents.length} past incidents.`);
 
-  await octokit.gists.update({
-    gist_id: options.gistId,
-    files: {
-      ["current_incidents.json"]: {
-        content: JSON.stringify(currentIncidents)
-      },
-      ["past_incidents.json"]: {
-        content: JSON.stringify(pastIncidents)
-      }
+  const writeFileCallback: fs.NoParamCallback = (err) => {
+    if (err) {
+      console.error(err);
     }
-  });
+  };
 
-  console.log(`Published to Gist ${options.gistId}.`);
+  fs.writeFile("current_incidents.json", JSON.stringify(currentIncidents), writeFileCallback);
+  fs.writeFile("past_incidents.json", JSON.stringify(pastIncidents), writeFileCallback);
+
+  console.log(`Saved.`);
 })();
