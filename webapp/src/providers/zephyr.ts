@@ -9,82 +9,98 @@ const components = [
   {
     id: "9",
     name: "HZR Kubernetes Cluster",
+    type: "service",
     source: `${componentSourceBase}/status.hzr_kubernetes_cluster.json`,
   },
   {
     id: "10",
     name: "CNX Kubernetes Cluster",
+    type: "service",
     source: `${componentSourceBase}/status.cnx_kubernetes_cluster.json`,
   },
   {
     id: "11",
     name: "AWS Kubernetes Cluster",
+    type: "service",
     source: `${componentSourceBase}/status.aws_kubernetes_cluster.json`,
   },
   {
     id: "49",
     name: "HZR KeyDB Cache",
+    type: "service",
     source: `${componentSourceBase}/status.hzr_keydb_cache.json`,
   },
   {
     id: "50",
     name: "CNX KeyDB Cache",
+    type: "service",
     source: `${componentSourceBase}/status.cnx_keydb_cache.json`,
   },
   {
     id: "99",
     name: "HZR Actions Runner Controller",
+    type: "service",
     source: `${componentSourceBase}/status.hzr_actions_runner_controller.json`,
   },
   {
     id: "100",
     name: "CNX Actions Runner Controller",
+    type: "service",
     source: `${componentSourceBase}/status.cnx_actions_runner_controller.json`,
   },
   {
     id: "101",
     name: "AWS Actions Runner Controller",
+    type: "service",
     source: `${componentSourceBase}/status.aws_actions_runner_controller.json`,
-  },
-  {
-    id: "105",
-    name: "HZR Runner Scale Set: linux-arm64-4xlarge",
-    source: `${componentSourceBase}/status.hzr_runner_scale_set-linux_arm64_4xlarge.json`,
-  },
-  {
-    id: "106",
-    name: "HZR Runner Scale Set: linux-x64-4xlarge",
-    source: `${componentSourceBase}/status.hzr_runner_scale_set-linux_x64_4xlarge.json`,
-  },
-  {
-    id: "110",
-    name: "CNX Runner Scale Set: linux-arm64-4xlarge",
-    source: `${componentSourceBase}/status.cnx_runner_scale_set-linux_arm64_4xlarge.json`,
-  },
-  {
-    id: "111",
-    name: "CNX Runner Scale Set: linux-x64-4xlarge",
-    source: `${componentSourceBase}/status.cnx_runner_scale_set-linux_x64_4xlarge.json`,
-  },
-  {
-    id: "120",
-    name: "AWS Runner Scale Set: linux-arm64-4xlarge",
-    source: `${componentSourceBase}/status.aws_runner_scale_set-linux_arm64_4xlarge.json`,
-  },
-  {
-    id: "121",
-    name: "AWS Runner Scale Set: linux-x64-4xlarge",
-    source: `${componentSourceBase}/status.aws_runner_scale_set-linux_x64_4xlarge.json`,
   },
   {
     id: "300",
     name: "Elasticsearch",
+    type: "service",
     source: `${componentSourceBase}/status.aws_elasticsearch.json`,
   },
   {
     id: "301",
     name: "Kibana",
+    type: "service",
     source: `${componentSourceBase}/status.aws_kibana.json`,
+  },
+  {
+    id: "1100",
+    name: "HZR Runner Scale Set: linux-arm64-4xlarge",
+    type: "runner",
+    source: `${componentSourceBase}/status.hzr_runner_scale_set-linux_arm64_4xlarge.json`,
+  },
+  {
+    id: "1101",
+    name: "HZR Runner Scale Set: linux-x64-4xlarge",
+    type: "runner",
+    source: `${componentSourceBase}/status.hzr_runner_scale_set-linux_x64_4xlarge.json`,
+  },
+  {
+    id: "1200",
+    name: "CNX Runner Scale Set: linux-arm64-4xlarge",
+    type: "runner",
+    source: `${componentSourceBase}/status.cnx_runner_scale_set-linux_arm64_4xlarge.json`,
+  },
+  {
+    id: "1201",
+    name: "CNX Runner Scale Set: linux-x64-4xlarge",
+    type: "runner",
+    source: `${componentSourceBase}/status.cnx_runner_scale_set-linux_x64_4xlarge.json`,
+  },
+  {
+    id: "1300",
+    name: "AWS Runner Scale Set: linux-arm64-4xlarge",
+    type: "runner",
+    source: `${componentSourceBase}/status.aws_runner_scale_set-linux_arm64_4xlarge.json`,
+  },
+  {
+    id: "1301",
+    name: "AWS Runner Scale Set: linux-x64-4xlarge",
+    type: "runner",
+    source: `${componentSourceBase}/status.aws_runner_scale_set-linux_x64_4xlarge.json`,
   },
 ];
 
@@ -105,6 +121,7 @@ export const zephyrProvider: Provider = {
       return {
         id: component.id,
         name: component.name,
+        type: component.type,
         ...data
       };
     }));

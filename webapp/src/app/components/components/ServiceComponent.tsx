@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ComponentType } from "@/api/types";
+import { ServiceComponentType } from "@/api/types";
 import styled from "styled-components";
 import { Badge } from "./Badge";
 
@@ -48,7 +48,7 @@ const Terminal = styled.div`
   white-space: pre;
 `;
 
-export const Component = ({ name, status, rawData, updatedAt }: ComponentType) => {
+export const ServiceComponent = ({ name, status, rawData, updatedAt }: ServiceComponentType) => {
   const [showRawData, setShowRawData] = useState(false);
 
   return (
