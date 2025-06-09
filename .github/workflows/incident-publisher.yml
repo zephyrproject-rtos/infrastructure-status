@@ -17,13 +17,15 @@ defaults:
   run:
     working-directory: incident-publisher
 
-env:
-  INCIDENT_GIST_ID: 94b5b2e21495651fd58a175cba548b3c
-
 jobs:
   publish:
     name: Publish
     runs-on: ubuntu-22.04
+
+    env:
+      AWS_ACCESS_KEY_ID: "${{ secrets.AWS_ACCESS_KEY_ID }}"
+      AWS_SECRET_ACCESS_KEY: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+      AWS_DEFAULT_REGION: "us-east-2"
 
     steps:
     - name: Checkout
@@ -52,4 +54,8 @@ jobs:
           -o zephyrproject-rtos \
           -r infrastructure-status \
           -t ${{ secrets.ZB_GITHUB_TOKEN }} \
-          -g ${{ env.INCIDENT_GIST_ID }}
+
+    - name: Upload to S3 bucket
+      run: |
+        aws s3 cp current_incidents.json s3://statuspage-data/
+        aws s3 cp past_incidents.json s3://statuspage-data/
