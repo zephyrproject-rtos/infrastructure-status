@@ -1,7 +1,7 @@
 import { ComponentType, IncidentType, Provider } from "@/api/types";
 
 const componentSourceBase =
-  "https://gist.githubusercontent.com/zephyrbot/08a5b71b4208c6bd48d7f6447c10c786/raw";
+  "https://statuspage-data.s3.us-east-1.amazonaws.com";
 const incidentSourceBase =
   "https://gist.githubusercontent.com/zephyrbot/94b5b2e21495651fd58a175cba548b3c/raw"
 
