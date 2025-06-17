@@ -49,12 +49,6 @@ const components = [
     source: `${componentSourceBase}/status.cnx_actions_runner_controller.json`,
   },
   {
-    id: "101",
-    name: "AWS Actions Runner Controller",
-    type: "service",
-    source: `${componentSourceBase}/status.aws_actions_runner_controller.json`,
-  },
-  {
     id: "300",
     name: "Elasticsearch",
     type: "service",
@@ -89,18 +83,6 @@ const components = [
     name: "CNX Runner Scale Set: linux-x64-4xlarge",
     type: "runner",
     source: `${componentSourceBase}/status.cnx_runner_scale_set-linux_x64_4xlarge.json`,
-  },
-  {
-    id: "1300",
-    name: "AWS Runner Scale Set: linux-arm64-4xlarge",
-    type: "runner",
-    source: `${componentSourceBase}/status.aws_runner_scale_set-linux_arm64_4xlarge.json`,
-  },
-  {
-    id: "1301",
-    name: "AWS Runner Scale Set: linux-x64-4xlarge",
-    type: "runner",
-    source: `${componentSourceBase}/status.aws_runner_scale_set-linux_x64_4xlarge.json`,
   },
 ];
 
